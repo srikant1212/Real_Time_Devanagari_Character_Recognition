@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <item
+
+        android:id="@+id/save"
+        android:icon="@drawable/save"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="@string/save" />
+    <!--android:showAsAction="always"  this is not working...we used app:showAsAction instead of android:showAsAction -->
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/delete"
+        android:orderInCategory="100"
+
+        app:showAsAction="always"
+        android:title="delete" />
+
+
+</menu>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.srika_000.nepali_hwr.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <android.gesture.GestureOverlayView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/gesturelayout"
+        android:layout_centerHorizontal="true"
+        android:gestureColor="#f4390f0a"
+        android:gestureStrokeType="multiple"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="200dp"
+
+        android:fadeDuration="2500"
+        android:fadeEnabled="true"
+        android:fadeOffset="3000"
+
+        android:focusableInTouchMode="true"
+        android:background="@drawable/bg1"
+        android:paddingBottom="2dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="2dp"
+        android:scaleType="fitXY"
+        android:src="?android:attr/listDivider"
+        android:gestureStrokeWidth="12"
+        android:focusable="true"
+        android:clickable="false"
+        android:outlineProvider="bounds">
+    </android.gesture.GestureOverlayView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/resulttv"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/gesturelayout"
+        android:layout_alignEnd="@+id/gesturelayout"
+        android:background="#ffd8f6ff"
+        android:focusableInTouchMode="false"
+        android:textColor="#ff2b55ff"
+        android:textIsSelectable="false"
+        android:drawable="@drawable/bluecolor"
+
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:layout_marginTop="48dp"
+
+        android:textAlignment="center" />
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/bDelete"
+        android:background="@drawable/trash"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_marginTop="0dp" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:id="@+id/bUndo"
+        android:background="@drawable/undo"
+
+        android:layout_toLeftOf="@+id/bRedo"
+        android:layout_toStartOf="@+id/bRedo"
+        android:layout_marginTop="0dp"
+        android:clickable="true" />
+
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:id="@+id/bRedo"
+        android:background="@drawable/redo"
+
+        android:clickable="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/bUpload"
+        android:layout_toStartOf="@+id/bUpload" />
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/bUpload"
+        android:background="@drawable/upload"
+        android:clickable="true"
+        android:adjustViewBounds="false"
+        android:visibility="visible"
+        android:layout_alignBottom="@+id/bRedo"
+        android:layout_alignRight="@+id/gesturelayout"
+        android:layout_alignEnd="@+id/gesturelayout"
+        android:layout_marginTop="0dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/tv"
+        android:layout_alignBottom="@+id/resulttv"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="150dp"
+        android:textColor="#ff4263ff"
+        android:textSize="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textStyle="normal"
+        android:text="हजुरले लेख्नु भाको अक्षर " />
+
+    <!--<ImageButton-->
+        <!--android:layout_width="35dp"-->
+        <!--android:layout_height="35dp"-->
+        <!--android:id="@+id/bAppend"-->
+        <!--android:background="@drawable/plus"-->
+        <!--android:layout_alignBottom="@+id/bDelete"-->
+        <!--android:layout_toRightOf="@+id/bDelete"-->
+        <!--android:layout_toEndOf="@+id/bDelete"-->
+        <!--android:layout_marginBottom="3dp"-->
+        <!--android:onClick="append_function"/>-->
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        app:srcCompat="@android:drawable/ic_delete"
+        android:id="@+id/bClearAll"
+        android:layout_alignBottom="@+id/tv"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        />
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/copy"
+        android:id="@+id/bCopy"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/bUndo"
+        android:layout_toStartOf="@+id/bUndo"
+        android:layout_marginRight="37dp"
+        android:layout_marginEnd="37dp" />
+
+    <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:background="@drawable/left"
+        android:id="@+id/bBackSpace"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/bDelete"
+        android:layout_toEndOf="@+id/bDelete" />
+
+    <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:background="@drawable/right"
+        android:id="@+id/bSpace"
+        android:layout_alignBottom="@+id/bBackSpace"
+        android:layout_toRightOf="@+id/bBackSpace"
+        android:layout_toEndOf="@+id/bBackSpace"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        />
+
+
+</RelativeLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_add_here"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.srika_000.nepali_hwr.AddHere"
+    tools:showIn="@layout/activity_add_here"
+    >
+
+
+    <android.gesture.GestureOverlayView
+        android:id="@+id/gestures"
+        android:fadeOffset="100000"
+        android:fadeEnabled="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="200dp"
+        android:gestureStrokeType="multiple"
+        android:layout_width="fill_parent"
+        android:layout_height="500dp"
+        android:background="@drawable/bg1"
+        android:gestureColor="#ff090708"
+        android:layout_weight="0.45"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <!--<TextView-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/draw_here"-->
+        <!--android:textColor="#ff242020"-->
+        <!--android:textSize="30dp"-->
+        <!--android:textStyle="normal"-->
+        <!--android:id="@+id/wctext"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignParentTop="true" />-->
+
+</RelativeLayout>
