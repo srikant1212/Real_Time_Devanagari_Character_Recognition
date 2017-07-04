@@ -4,6 +4,7 @@ import android.content.ClipData;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.gesture.Gesture;
 import android.gesture.GestureLibraries;
 import android.gesture.GestureLibrary;
@@ -40,6 +41,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.security.PrivateKey;
 import java.util.ArrayList;
@@ -52,6 +54,8 @@ import static android.R.attr.text;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+
     private GestureLibrary gLib;
     private static final String TAGa = "MainActivity";
     private TextView result;
@@ -60,6 +64,7 @@ public class MainActivity extends AppCompatActivity
     private String space1=" ";
     private ClipData cd;
     private String name="Srikant";
+    private File trained_data;
 
 
 
@@ -74,6 +79,10 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab1 = (FloatingActionButton) findViewById(R.id.fab1_delete);
         fab2 = (FloatingActionButton) findViewById(R.id.fab2_help);
@@ -205,6 +214,10 @@ public class MainActivity extends AppCompatActivity
         gLib = GestureLibraries.fromFile(getExternalFilesDir(null) + "/" + "gesture.txt");
         gLib.load();
 
+
+
+
+
         // GestureOverlayView gestures = (GestureOverlayView) findViewById(R.id.gestures);
 //append garnko ko laki first ma nai + click garna parxa
 
@@ -309,8 +322,25 @@ public class MainActivity extends AppCompatActivity
                                        final Gesture gesture) {
 
 
-            ArrayList<Prediction> predictions = gLib.recognize(gesture);
+            //trained_data file read garna ko lagi
+            AssetManager am = getBaseContext().getAssets();
+            try {
+                InputStream is_trained = am.open("trained_data.txt");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+
+
+              ArrayList<Prediction> predictions = gLib.recognize(gesture);
+
+            //ArrayList<Prediction> predictions = is_trained.recognize(gesture);
             Log.d(TAGa, "Your Text");
+
+
+
 
 
 //            int result1 = 0;

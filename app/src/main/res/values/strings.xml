@@ -21,6 +21,7 @@
     <string name="title_activity_add_here">Add Here</string>
     <string name="gesture_saved">Saved</string>
     <string name="no_gesture">Draw First</string>
+    <string name="welcome_text">यहाँहरुलाई स्वागत छ </string>
 
 
 </resources>

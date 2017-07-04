@@ -9,9 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".Welcome_SC"
             android:label="@string/app_name"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".Welcome_SC"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -43,6 +43,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.srika_000.nepali_hwr.MainActivity" />
         </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.srika_000.nepali_hwr.MainActivity" />
+        </activity>
+
+
         <activity
             android:name=".About"
             android:label="@string/title_activity_about"
@@ -61,6 +73,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.srika_000.nepali_hwr.MainActivity" />
         </activity>
+
     </application>
 
 </manifest>
