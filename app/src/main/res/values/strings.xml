@@ -22,6 +22,10 @@
     <string name="gesture_saved">Saved</string>
     <string name="no_gesture">Draw First</string>
     <string name="welcome_text">यहाँहरुलाई स्वागत छ </string>
+    <string name="error_invalid_email">error_invalid_email</string>
+    <string name="error_field_required">error_field_required</string>
+    <string name="error_invalid_password">error_invalid_password</string>
+
 
 
 </resources>
