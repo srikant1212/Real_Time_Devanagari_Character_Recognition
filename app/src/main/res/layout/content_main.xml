@@ -41,28 +41,6 @@
         android:outlineProvider="bounds">
     </android.gesture.GestureOverlayView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/resulttv"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/gesturelayout"
-        android:layout_alignEnd="@+id/gesturelayout"
-        android:background="#ffd8f6ff"
-        android:focusableInTouchMode="false"
-        android:textColor="#ff2b55ff"
-        android:textIsSelectable="false"
-        android:drawable="@drawable/bluecolor"
-
-        android:textSize="50dp"
-        android:textStyle="bold"
-        android:layout_marginTop="48dp"
-
-        android:textAlignment="center" />
-
     <ImageButton
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -111,21 +89,6 @@
         android:layout_alignRight="@+id/gesturelayout"
         android:layout_alignEnd="@+id/gesturelayout"
         android:layout_marginTop="0dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:id="@+id/tv"
-        android:layout_alignBottom="@+id/resulttv"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="150dp"
-        android:textColor="#ff4263ff"
-        android:textSize="30dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:textStyle="normal"
-        android:text="हजुरले लेख्नु भाको अक्षर " />
 
     <!--<ImageButton-->
         <!--android:layout_width="35dp"-->
@@ -179,6 +142,72 @@
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/resulttv"
+        android:background="#ffd8f6ff"
+        android:focusableInTouchMode="false"
+        android:textColor="#ff2b55ff"
+        android:textIsSelectable="false"
+        android:drawable="@drawable/bluecolor"
+
+        android:textSize="50dp"
+        android:textStyle="bold"
+
+        android:textAlignment="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="100dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/tv"
+        android:layout_marginBottom="54dp"
+        android:textColor="#ff4263ff"
+        android:textSize="30dp"
+        android:textStyle="normal"
+        android:text="हजुरले लेख्नु भाको अक्षर "
+        android:layout_alignBottom="@+id/resulttv"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/tv2"
+        android:textColor="#ff4263ff"
+        android:textSize="30dp"
+        android:textStyle="normal"
+        android:text="सम्भावित अक्षर हरु "
+        android:layout_above="@+id/sugessted"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/sugessted"
+        android:background="#ffd8f6ff"
+        android:focusableInTouchMode="false"
+        android:textColor="#FF0000"
+        android:textIsSelectable="false"
+        android:drawable="@drawable/bluecolor"
+
+
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

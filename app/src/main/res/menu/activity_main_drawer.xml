@@ -28,9 +28,9 @@
                 android:icon="@drawable/ic_history"
                 android:title="Histrory" />
             <item
-                android:id="@+id/nav_gallery"
+                android:id="@+id/nav_OCR"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Gallery" />
+                android:title="OCR Test" />
             <item
                 android:id="@+id/nav_trainedhere"
                 android:icon="@drawable/ic_menu_slideshow"

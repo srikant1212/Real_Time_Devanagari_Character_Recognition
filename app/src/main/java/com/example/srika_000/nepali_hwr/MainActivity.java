@@ -43,6 +43,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.reflect.Array;
 import java.security.PrivateKey;
 import java.util.ArrayList;
 
@@ -56,9 +57,9 @@ public class MainActivity extends AppCompatActivity
 
 
 
-    private GestureLibrary gLib;
+    private GestureLibrary gLib,gLibrary;
     private static final String TAGa = "MainActivity";
-    private TextView result;
+    private TextView result,suggested;
     private String R1,R2;
     private ImageButton append,clearall,space,copy,backspace;
     private String space1=" ";
@@ -70,9 +71,12 @@ public class MainActivity extends AppCompatActivity
 
 
 
+
+
     Boolean fabopen = false;
     FloatingActionButton fab, fab1, fab2;
     Animation fab_open, fab_close, clock, anticlock;
+
 
 
     @Override
@@ -87,6 +91,7 @@ public class MainActivity extends AppCompatActivity
         fab1 = (FloatingActionButton) findViewById(R.id.fab1_delete);
         fab2 = (FloatingActionButton) findViewById(R.id.fab2_help);
         result = (TextView) findViewById(R.id.resulttv);
+        suggested =(TextView) findViewById(R.id.sugessted);
         //append = (ImageButton) findViewById(R.id.bAppend);
         clearall=(ImageButton) findViewById(R.id.bClearAll);
         space=(ImageButton) findViewById(R.id.bSpace);
@@ -203,6 +208,7 @@ public class MainActivity extends AppCompatActivity
                 gestures.cancelClearAnimation();
                 gestures.clear(true);
                 result.setText(null);
+                suggested.setText(null);
 
 
             }
@@ -211,8 +217,15 @@ public class MainActivity extends AppCompatActivity
 
 //<!--.............-->
         openOptionsMenu();
-        gLib = GestureLibraries.fromFile(getExternalFilesDir(null) + "/" + "gesture.txt");
+       // gLib = GestureLibraries.fromFile(getExternalFilesDir(null) + "/" + "gesture.txt");
+       // gLib.load();
+
+        gLib = GestureLibraries.fromRawResource(this, R.raw.trained_data_2);
+        //gLib = GestureLibraries.fromRawResource(this, R.raw.nep2);
         gLib.load();
+        if (!gLib.load()) {
+            finish();
+        }
 
 
 
@@ -285,19 +298,24 @@ public class MainActivity extends AppCompatActivity
 //            Intent intent1 =new Intent(MainActivity.this,Offline_OCR.class);
 //            this.startActivity(intent1);
 
-            Intent i =new Intent(this,Offline_OCR.class);
+            Intent i =new Intent(this,CaptureImage.class);
             startActivity(i);
+
         } else if (id == R.id.nav_tutorial) {
             Intent i =new Intent(this,Tutorial.class);
             startActivity(i);
 
         } else if (id == R.id.nav_about) {
-            Intent i =new Intent(this,About.class);
+            Intent i =new Intent(this, About.class);
             startActivity(i);
 
         } else if (id == R.id.nav_history) {
+            //Intent i = new Intent(this,ViewDataSet.class);
+            //startActivity(i);
 
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_OCR) {
+            Intent i =new Intent(this,MainActivity2.class);
+            startActivity(i);
 
         }
         else if (id == R.id.nav_trainedhere) {
@@ -360,26 +378,59 @@ public class MainActivity extends AppCompatActivity
             Log.d("height12",String.valueOf(height));
             Log.d("width12", String.valueOf(width));
 
-            // one prediction needed
-            if (predictions.size() > 0) {
-                Prediction prediction = predictions.get(0);
-                // checking prediction
-                if (prediction.score > 1 ) {
-                    // and action
-               //     TextView  result = (TextView) findViewById(R.id.resulttv);
-                     R1 = prediction.name;
+//            // one prediction needed
+//            if (predictions.size() > 0) {
+//                Prediction prediction = predictions.get(0);
+//                // checking prediction
+//                if (prediction.score > 1 ) {
+//                    // and action
+//               //     TextView  result = (TextView) findViewById(R.id.resulttv);
+//                     R1 = prediction.name;
+//
 
+
+
+
+
+                if (predictions.size() > 0 && predictions.get(0).score > 1.0) {
+
+
+                 R1 = predictions.get(0).name;
+
+                    {
                         //result.setText(R1);
-                   // Toast.makeText(MainActivity.this, R1, Toast.LENGTH_SHORT).show();
-                    //character ko name preeti font ma save garna ko lagi
-                    Typeface my_custom_fonts2 =Typeface.createFromAsset(getAssets(),"fonts/Preeti.ttf");
-                    result.setTypeface(my_custom_fonts2);
-                    if(result == null) {
-                        result.setText(R1);
-                    }
-                    else {
-                         result.append(R1);
-                         }
+                        // Toast.makeText(MainActivity.this, R1, Toast.LENGTH_SHORT).show();
+                        //character ko name preeti font ma save garna ko lagi
+                        Typeface my_custom_fonts2 = Typeface.createFromAsset(getAssets(), "fonts/Preeti.ttf");
+                        result.setTypeface(my_custom_fonts2);
+                        if (result == null) {
+                            result.setText(R1);
+                        } else {
+                            result.append(R1);
+                        }
+
+
+                        //to show the suggestion
+                        suggested.setTypeface(my_custom_fonts2);
+
+                        int count = 0;
+                        for(int i2=0; i2 <4 ;i2++) {
+
+                            count ++;
+                            Prediction prediction = predictions.get(i2);
+                            Log.i(TAGa, prediction.name);
+
+                           // while (count < 4) {
+                                if (suggested == null) {
+                                    // result.setText(R1);
+                                    suggested.setText(prediction.name);
+                                } else {
+                                    // result.append(R1);
+                                    suggested.append(prediction.name);
+                                    suggested.append(" , ");
+                                }
+                           // };
+                        }
 
 
 //                    if(R.id.bAppend==0 ){

@@ -13,4 +13,71 @@
     tools:context="com.example.srika_000.nepali_hwr.Offline_OCR"
     tools:showIn="@layout/activity_offline__ocr">
 
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/common_action_bar_splitter"
+        android:id="@+id/iv"
+        android:layout_above="@+id/textView12"
+        android:layout_below="@+id/bcamera"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/common_action_bar_splitter"
+        android:id="@+id/tvoutput"
+        android:textSize="30sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="25dp" />
+
+    <Button
+        android:text="Import"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/importb"
+        android:onClick="imageclick"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Process"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bcamera"
+        android:layout_alignRight="@+id/textView12"
+        android:layout_alignEnd="@+id/textView12"
+        android:id="@+id/bprocess" />
+
+    <TextView
+        android:text="Proccesd Character"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView12"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="normal|bold"
+        android:textSize="24sp"
+
+
+        android:layout_marginBottom="55dp"
+        android:layout_alignBottom="@+id/tvoutput"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bcamera"
+        android:onClick="buttonclickedphoto"
+
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

@@ -16,14 +16,14 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="?attr/actionModeSplitBackground"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_offline__ocr"
-        android:id="@+id/include" />
-
+        android:id="@+id/include"
+         />
 
 
 </android.support.design.widget.CoordinatorLayout>
