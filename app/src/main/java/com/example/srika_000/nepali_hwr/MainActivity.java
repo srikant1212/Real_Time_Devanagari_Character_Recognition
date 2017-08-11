@@ -217,15 +217,15 @@ public class MainActivity extends AppCompatActivity
 
 //<!--.............-->
         openOptionsMenu();
-       // gLib = GestureLibraries.fromFile(getExternalFilesDir(null) + "/" + "gesture.txt");
-       // gLib.load();
-
-        gLib = GestureLibraries.fromRawResource(this, R.raw.trained_data_2);
-        //gLib = GestureLibraries.fromRawResource(this, R.raw.nep2);
+        gLib = GestureLibraries.fromFile(getExternalFilesDir(null) + "/" + "gesture.txt");
         gLib.load();
-        if (!gLib.load()) {
-            finish();
-        }
+
+     //   gLib = GestureLibraries.fromRawResource(this, R.raw.trained_data_2);
+        //gLib = GestureLibraries.fromRawResource(this, R.raw.nep2);
+//        gLib.load();
+//        if (!gLib.load()) {
+//            finish();
+//        }
 
 
 
@@ -341,13 +341,13 @@ public class MainActivity extends AppCompatActivity
 
 
             //trained_data file read garna ko lagi
-            AssetManager am = getBaseContext().getAssets();
-            try {
-                InputStream is_trained = am.open("trained_data.txt");
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//            AssetManager am = getBaseContext().getAssets();
+//            try {
+//                InputStream is_trained = am.open("trained_data.txt");
+//
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
 
 
 
@@ -375,7 +375,7 @@ public class MainActivity extends AppCompatActivity
             int height = metrics.heightPixels;
             int width = metrics.widthPixels;
 
-            Log.d("height12",String.valueOf(height));
+            Log.i("height12",String.valueOf(height));
             Log.d("width12", String.valueOf(width));
 
 //            // one prediction needed
